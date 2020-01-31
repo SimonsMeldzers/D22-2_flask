@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -19,6 +19,13 @@ def contact():
 def home():
   return render_template('home.html')
 
+@app.route('/params')
+def params():
+  return request.args
+
+@app.route('/post', methods = ['POST'])
+def post():
+  return request.get_json()
 
 
 
