@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from file_proc import read_file
 
 app = Flask(__name__)
 
@@ -27,6 +28,10 @@ def params():
 def post():
   return request.get_json()
 
+@app.route('/read_file')
+def read_from_file():
+  content = read_file()
+  return content
 
 
 
