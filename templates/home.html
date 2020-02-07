@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-
+{% extends "layout.html" %}
   <head>
     <title>Repl mājaslapa</title>
     <link rel = "stylesheet" href="{{ url_for('static', filename='css/home.css')}}"/>
   </head>
-{% extends "layout.html" %}
+{% set active_page="home" %}
+
 {% block saturs %}
   <body>
     <h1> Sveiki </h1>
